@@ -1,0 +1,16 @@
+version: "3"
+services:
+  web:
+    image: docker101-demo2:latest
+    container_name: demo2
+    ports:
+      - 5000:5000
+  mysql:
+    image: demo-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=123123  # set an env var for flask
+    ports:
+      - "3306:3306"
+volumes:
+    esdata1:
+      driver: local
